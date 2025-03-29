@@ -208,7 +208,7 @@ export const CoinTable = ({
       </div>
 
       {isLoading ? (
-        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-5">
           <Skeleton className="h-40 rounded-xl bg-stone-800" />
           <Skeleton className="h-40 rounded-xl bg-stone-800" />
           <Skeleton className="h-40 rounded-xl bg-stone-800" />
@@ -218,7 +218,7 @@ export const CoinTable = ({
           <Skeleton className="h-40 rounded-xl bg-stone-800" />
         </div>
       ) : viewMode === 'grid' ? (
-        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-5">
           {filteredCoins.length > 0 ? (
             filteredCoins.map((coin) => <CoinCard key={coin.id} coin={coin} />)
           ) : (

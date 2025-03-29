@@ -123,12 +123,14 @@ export const CoinDetail = ({
             side="right"
             className="!max-w-full text-white w-[100vw] overflow-auto lg:w-5xl bg-stone-900 border-white/10 px-[5vw] p-0"
           >
-            <div className="my-12 p-12">
+            <div className="my-12 p-4 lg:p-12">
               <div className="flex items-center justify-between">
                 <div className="flex gap-2 justify-between w-full">
                   <div>
-                    <p className="text-4xl font-bold mb-3 mt-5">{coin.name}</p>
-                    <p className="text-3xl font-bold flex items-center">
+                    <p className="text-2xl lg:text-4xl font-bold mb-3 mt-5">
+                      {coin.name}
+                    </p>
+                    <p className="text-xl lg:text-3xl font-bold flex items-center">
                       <span className="text-secondary">$</span>
                       {coin.currentPrice} -
                       <div className="ml-2 flex items-center gap-1">
