@@ -78,7 +78,7 @@ export const CoinTableView = ({
                 MarketCap{getSortIcon('marketCap')}
               </Button>
             </TableHead>
-            <TableHead className="hidden md:table-cell">
+            <TableHead>
               <Button
                 variant="ghost"
                 className="font-bold !p-0 hover:bg-transparent !text-white"
