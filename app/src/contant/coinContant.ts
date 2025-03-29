@@ -1,1 +1,1 @@
-export const MAX_COINS_PER_PAGE = 10
+export const MAX_COINS_PER_PAGE = 12
