@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import axios, { type AxiosRequestConfig } from 'axios'
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api'
+const API_URL = import.meta.env.VITE_API_URL
 
 interface UseFetchState<T> {
   data: T | null

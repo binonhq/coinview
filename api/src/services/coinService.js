@@ -64,6 +64,10 @@ exports.getCoinDetails = async (id) => {
 
     return toCamelCase(response.data)
   } catch (error) {
+    if (error.status === 429) {
+      console.error("Rate limit exceeded. Please try again later.")
+      return this.getCoinDetails(id)
+    }
     console.error(`Error fetching details for coin ${id}:`, error.message)
     throw new Error(`Failed to fetch details for coin: ${id}`)
   }
@@ -85,6 +89,11 @@ exports.getCoinPriceHistory = async (id, currency = "usd", days = "7") => {
 
     return toCamelCase(response.data)
   } catch (error) {
+    if (error.status === 429) {
+      console.error("Rate limit exceeded. Please try again later.")
+      return this.getCoinPriceHistory(id, currency, days)
+    }
+
     console.error(`Error fetching price history for coin ${id}:`, error.message)
     throw new Error(`Failed to fetch price history for coin: ${id}`)
   }

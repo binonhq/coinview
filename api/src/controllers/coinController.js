@@ -96,7 +96,17 @@ exports.getCoinPriceHistory = async (req, res, next) => {
       return res.status(400).json({ error: 'Coin ID is required' });
     }
     
+    const cacheKey = `priceHistory_${id}_${vs_currency}_${days}`;
+    const cachedData = cache.get(cacheKey);
+    
+    if (cachedData) {
+      return res.json(cachedData);
+    }
+    
     const priceHistory = await coinService.getCoinPriceHistory(id, vs_currency, days);
+    
+    // Cache the result
+    cache.set(cacheKey, priceHistory);
     
     res.json(priceHistory);
   } catch (error) {

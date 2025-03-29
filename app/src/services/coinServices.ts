@@ -33,8 +33,12 @@ export interface CoinDetail {
       price: number
       date: string
     }
-    ath: unknown
-    atl: unknown
+    ath: {
+      usd: number
+    }
+    atl: {
+      usd: number
+    }
   }
   description: {
     en: string
