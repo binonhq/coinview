@@ -16,11 +16,7 @@ export const HomePage = () => {
     page: 1,
   })
 
-  const {
-    data: coins,
-    isLoading,
-    error,
-  } = useCoins(
+  const { data: coins, isLoading } = useCoins(
     formState.search,
     formState.sort,
     'usd',
@@ -74,14 +70,6 @@ export const HomePage = () => {
           Stay Ahead in Crypto - Real-Time Prices at Your Fingertips
         </p>
       </div>
-
-      {error && (
-        <div className="w-full p-4 bg-red-500/10 border border-red-500 rounded-md text-center">
-          <p className="text-red-500">
-            Error loading data. Please try again later.
-          </p>
-        </div>
-      )}
 
       <CoinTable
         coins={coins || []}
